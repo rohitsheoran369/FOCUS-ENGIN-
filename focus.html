@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Focus Mode</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SETUP -->
+    <div id="setup" class="card fade-in">
+        <h1>FOCUS MODE</h1>
+
+        <input id="username" placeholder="Username">
+        <input id="duration" type="number" placeholder="Duration (minutes)">
+        <input id="lectureUrl" placeholder="YouTube Lecture Link">
+	<label class="music-option">
+    	<input type="checkbox" id="musicToggle">
+   	 Play focus music
+	</label>
+
+
+        <button onclick="startSession()">START SESSION</button>
+        <button onclick="window.location.href='/'">⬅ BACK</button>
+    </div>
+
+    <!-- SESSION -->
+    <div id="session" class="card hidden fade-in">
+        <iframe id="lectureFrame" allowfullscreen></iframe>
+        <div id="timer">00:00</div>
+        <div id="violations">Violations: 0</div>
+    </div>
+
+    <!-- END -->
+    <div id="end" class="card hidden fade-in">
+        <h2>SESSION COMPLETE ✅</h2>
+        <button onclick="window.location.href='/leaderboard-page'">VIEW LEADERBOARD</button>
+        <button onclick="window.location.href='/'">HOME</button>
+    </div>
+
+</div>
+<audio id="focusMusic" loop>
+    <source src="{{ url_for('static', filename='music/focus.mp3') }}" type="audio/mpeg">
+</audio>
+
+
+<script src="{{ url_for('static', filename='focus.js') }}"></script>
+</body>
+</html>
+	

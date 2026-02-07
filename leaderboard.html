@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="card fade-in">
+        <h1>🏆 LEADERBOARD</h1>
+        <div id="leaderboardList"></div>
+        <button onclick="window.location.href='/'">HOME</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='leaderboard.js') }}"></script>
+</body>
+</html>
